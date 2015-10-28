@@ -1,0 +1,17 @@
+<div id="new-food-form">
+  <%= form_for [@tracking_period, @food], remote: true do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :calories_per_serving %>
+      <%= f.text_field :calories_per_serving, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :servings %>
+      <%= f.text_field :servings, class: 'form-control' %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

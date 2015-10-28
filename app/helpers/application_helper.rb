@@ -11,4 +11,7 @@ module ApplicationHelper
       key.to_s
     end
   end
+  def calories_per_item(servings, calories_per_serving)
+    return servings * calories_per_serving
+  end
 end

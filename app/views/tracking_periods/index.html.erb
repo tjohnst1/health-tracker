@@ -1,0 +1,18 @@
+<h1><%= @tracking_period.calorie_total %></h1>
+
+<div id="tracking-period-food">
+  <% if @tracking_period.foods %>
+    <% @tracking_period.foods.each do |food| %>
+      <p><%= food.name %><p>
+      <p>Servings: <%= food.servings %></p>
+      <p>Calories per serving: <%= food.calories_per_serving %></p>
+      <p>Calories Total: <%= food.calorieTotal %></p>
+      <%= link_to 'Edit Info', edit_tracking_period_path(@tracking_period, food) %>
+      <%= link_to 'Delete', edit_tracking_period_path(@tracking_period, food) %>
+    <% end %>
+  <% else %>
+    <p>Test Food</p>
+  <% end %>
+</div>
+
+<%= link_to 'Add a Food', new_tracking_period_food_path(@tracking_period), remote: true, id: 'add-food' %>
