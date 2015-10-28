@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'responders'
+gem 'devise'
 
 group :development do
   gem 'byebug'
