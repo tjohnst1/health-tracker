@@ -34,8 +34,8 @@
         null,
         null,
         1,
-        2,
-        2,
+        5,
+        5,
         null,
         null,
         null,
@@ -299,8 +299,24 @@
         1,
         1,
         null
+      ],
+      "/Users/Guest/Desktop/health_tracker/spec/models/food_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/health_tracker/app/models/food.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1446050981
+    "timestamp": 1446051362
   }
 }
