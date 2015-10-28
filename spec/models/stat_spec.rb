@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe DailyStat do
+describe Stat do
   it { should validate_presence_of :calories }
 end

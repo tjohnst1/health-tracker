@@ -1,3 +1,3 @@
-class DailyStat < ActiveRecord::Base
+class Stat < ActiveRecord::Base
   validates :calories, presence: true
 end
