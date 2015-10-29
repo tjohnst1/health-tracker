@@ -4,7 +4,7 @@ class TrackingPeriodsController < ApplicationController
 
   def index
     @tracking_periods = TrackingPeriod.all
-    @tracking_period = TrackingPeriod.find_by(id: current_user.id)
+    @tracking_period = TrackingPeriod.find_by(user_id: current_user)
   end
 
   def show

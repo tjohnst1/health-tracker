@@ -3,7 +3,7 @@ class Food < ActiveRecord::Base
   validates :calories_per_serving, presence: true
   validates :servings, presence: true
   belongs_to :tracking_period
-  def calorieTotal
+  def calorie_total
     self.calories_per_serving * self.servings
-  end  
+  end
 end

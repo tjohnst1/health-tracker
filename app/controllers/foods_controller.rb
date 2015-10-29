@@ -22,10 +22,27 @@ class FoodsController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def update
+    respond_to do |format|
+      format.html{ redirect_to tracking_period_path(@tracking_period) }
+      format.js
+    end
+  end
+
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    redirect_to tracking_period_path(@tracking_period)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to tracking_period_path(@tracking_period) }
+    end
   end
 
   private
