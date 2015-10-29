@@ -1,4 +1,2 @@
-$('#new-food-form').remove();
-$(document).on('ajaxSuccess', function() {
-  $('p:contains(<%= @food.name %>)').closest('.food-info').html('<%= j render "new_food" %>')
-});
+$('#modal-form').modal('toggle')
+$('.food-info-<%= @food.id %>').html('<%= j render "new_food" %>')

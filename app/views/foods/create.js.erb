@@ -1,5 +1,5 @@
 $('#add-food').show();
-$('#new-food-form').remove();
+$('#modal-form').modal('toggle')
 
 $('#tracking-period-food').append('<%= j render "new_food" %>');
 var newCalorieCount = Number($('#tracking-period-calorie-total').html()) + Number($('.food-calories-<%= @food.id %>').html())

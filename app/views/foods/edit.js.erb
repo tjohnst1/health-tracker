@@ -1,2 +1,3 @@
-$(this).hide();
-$('#tracking-period-food').append('<%= j render "form" %>');
+$('.modal-body').empty();
+$('.modal-body').append('<%= j render "modal_form" %>');
+$('#modal-form').modal('show')

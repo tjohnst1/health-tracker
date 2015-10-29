@@ -3,7 +3,7 @@
 
   <div id="tracking-period-food">
     <% if @tracking_period.foods %>
-      <% @tracking_period.foods.each do |food| %>
+      <% @foods.each do |food| %>
         <div class="food-info-<%= food.id %>">
           <p><%= food.name %><p>
           <p>Servings: <%= food.servings %></p>
@@ -22,3 +22,5 @@
 <% else %>
     <%= link_to 'Add tracking period', new_tracking_period_path %>
 <% end %>
+
+<%= render partial: 'foods/modal', locals: { modal_title: 'Test' } %>

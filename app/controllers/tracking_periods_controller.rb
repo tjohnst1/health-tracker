@@ -5,6 +5,7 @@ class TrackingPeriodsController < ApplicationController
   def index
     @tracking_periods = TrackingPeriod.all
     @tracking_period = TrackingPeriod.find_by(user_id: current_user)
+    @foods = @tracking_period.foods.sort{|x, y| y.calorie_total <=> x.calorie_total}
   end
 
   def show
