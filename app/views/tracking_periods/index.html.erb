@@ -1,16 +1,16 @@
-<% if current_user %>
+<% if current_user && @tracking_period %>
   <h1 id="tracking-period-calorie-total"><%= @tracking_period.calorie_total %></h1>
 
   <div id="tracking-period-food">
     <% if @tracking_period.foods %>
       <% @tracking_period.foods.each do |food| %>
-        <div class="food-info">
+        <div class="food-info-<%= food.id %>">
           <p><%= food.name %><p>
           <p>Servings: <%= food.servings %></p>
           <p>Calories per serving: <%= food.calories_per_serving %></p>
-          <p>Calories Total: <%= food.calorie_total %></p>
-          <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), class:'edit-food', remote: true %>
-          <%= link_to 'Delete', tracking_period_food_path(@tracking_period, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+          <p>Calories Total: <span class='food-calories-<%= food.id %>'><%= food.calorie_total %></span></p>
+          <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), class:"edit-food-#{food.id}", remote: true %>
+          <%= link_to 'Delete', tracking_period_food_path(@tracking_period, food), remote: true, class:"delete-food-#{food.id}", data: { confirm: 'Are you sure?', method: 'delete' } %>
         </div>
       <% end %>
     <% else %>
@@ -19,4 +19,6 @@
   </div>
 
   <%= link_to 'Add Food', new_tracking_period_food_path(@tracking_period), remote: true, id: 'add-food' %>
+<% else %>
+    <%= link_to 'Add tracking period', new_tracking_period_path %>
 <% end %>

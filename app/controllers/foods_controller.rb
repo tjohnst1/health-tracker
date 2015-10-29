@@ -47,6 +47,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
+    @foodid = @food.id
     @food.destroy
     respond_to do |format|
       format.js

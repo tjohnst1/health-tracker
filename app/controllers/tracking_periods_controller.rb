@@ -16,6 +16,7 @@ class TrackingPeriodsController < ApplicationController
 
   def create
     @tracking_period = TrackingPeriod.new(tracking_period_params)
+    @tracking_period.update_attributes(user_id: current_user.id)
     if @tracking_period.save
       redirect_to tracking_periods_path
     else
@@ -43,7 +44,7 @@ class TrackingPeriodsController < ApplicationController
     def find_stats
       @tracking_period = TrackingPeriod.find(params[:id])
     end
-    def stat_params
+    def tracking_period_params
       params.require(:tracking_period).permit(:calorie_count)
     end
 end

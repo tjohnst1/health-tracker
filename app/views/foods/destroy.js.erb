@@ -1,3 +1,7 @@
-$('.delete-food').on('ajax:complete',function(e) {
-  $(this).closest('.food-info').fadeOut(500);
-});
+var calorieTotal = Number($('#tracking-period-calorie-total').html())
+var caloriesToSubtract = Number($('.food-calories-<%= @foodid %>').html())
+console.log(calorieTotal)
+console.log(caloriesToSubtract)
+
+$('.food-info-<%= @foodid %>').fadeOut(500);
+$('#tracking-period-calorie-total').html(calorieTotal - caloriesToSubtract)

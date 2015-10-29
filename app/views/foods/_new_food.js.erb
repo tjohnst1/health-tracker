@@ -1,6 +1,8 @@
-<p><%= @food.name %><p>
-<p>Servings: <%= @food.servings %></p>
-<p>Calories per serving: <%= @food.calories_per_serving %></p>
-<p>Calories Total: <%= @food.calorie_total %></p>
-<%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, @food), class:'edit-food', remote: true %>
-<%= link_to 'Delete', tracking_period_food_path(@tracking_period, @food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+<div class="food-info-<%= @food.id %>">
+  <p><%= @food.name %><p>
+  <p>Servings: <%= @food.servings %></p>
+  <p>Calories per serving: <%= @food.calories_per_serving %></p>
+  <p>Calories Total: <span class="food-calories-<%= @food.id %>"><%= @food.calorie_total %></span></p>
+  <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, @food), class:'edit-food', remote: true %>
+  <%= link_to 'Delete', tracking_period_food_path(@tracking_period, @food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+</div>
