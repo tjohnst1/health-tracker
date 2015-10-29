@@ -23,6 +23,8 @@ class FoodsController < ApplicationController
   end
 
   def edit
+    @tracking_period = TrackingPeriod.find(params[:tracking_period_id])
+    @food = Food.find(params[:id])
     respond_to do |format|
       format.html
       format.js
@@ -30,9 +32,16 @@ class FoodsController < ApplicationController
   end
 
   def update
+    @tracking_period = TrackingPeriod.find(params[:tracking_period_id])
+    @food = Food.find(params[:id])
     respond_to do |format|
-      format.html{ redirect_to tracking_period_path(@tracking_period) }
-      format.js
+      if @food.update(food_params)
+        format.html{ redirect_to tracking_period_path(@tracking_period) }
+        format.js
+      else
+        format.html{ render :edit }
+        format.js{ render 'foods/new_food' }
+      end
     end
   end
 

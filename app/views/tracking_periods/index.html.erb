@@ -1,5 +1,5 @@
 <% if current_user %>
-  <h1><%= @tracking_period.calorie_total %></h1>
+  <h1 id="tracking-period-calorie-total"><%= @tracking_period.calorie_total %></h1>
 
   <div id="tracking-period-food">
     <% if @tracking_period.foods %>
@@ -9,7 +9,7 @@
           <p>Servings: <%= food.servings %></p>
           <p>Calories per serving: <%= food.calories_per_serving %></p>
           <p>Calories Total: <%= food.calorie_total %></p>
-          <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), remote: true %>
+          <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), class:'edit-food', remote: true %>
           <%= link_to 'Delete', tracking_period_food_path(@tracking_period, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
         </div>
       <% end %>
