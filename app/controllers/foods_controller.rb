@@ -40,7 +40,7 @@ class FoodsController < ApplicationController
         format.js
       else
         format.html{ render :edit }
-        format.js{ render 'foods/new_food' }
+        format.js{}
       end
     end
   end

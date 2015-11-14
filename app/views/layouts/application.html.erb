@@ -8,7 +8,9 @@
 </head>
 <body>
 <%= render 'layouts/nav' %>
-<%= render 'layouts/flash' %>
+<% if (flash.notice || flash.alert) %>
+  <%= render 'layouts/flash' %>
+<% end %>
 <%= yield %>
 
 </body>
