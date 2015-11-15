@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
   validate :validate_username
+  has_many :tracking_periods
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

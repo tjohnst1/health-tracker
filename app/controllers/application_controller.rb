@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :total_calorie_count
+
+  def total_calorie_count
+    total = 0
+    if current_user
+      User.find(current_user).tracking_periods.each do |tracking_period|
+        total = total + tracking_period.calories_total
+      end
+    end
+    total
+  end
 
   protected
   def configure_permitted_parameters

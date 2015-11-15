@@ -55,7 +55,6 @@ before_filter :configure_account_update_params, only: [:update]
     TrackingPeriod.create(name: "Lunch", user_id: resource.id)
     TrackingPeriod.create(name: "Dinner", user_id: resource.id)
     TrackingPeriod.create(name: "Snacks", user_id: resource.id)
-    binding.pry
     super(resource)
   end
 

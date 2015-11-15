@@ -3,10 +3,13 @@ class TrackingPeriodsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @breakfast = TrackingPeriod.find_by(user_id: current_user.id, name: 'Breakfast')
-    @lunch = TrackingPeriod.find_by(user_id: current_user.id, name: 'Lunch')
-    @dinner = TrackingPeriod.find_by(user_id: current_user.id, name: 'Dinner')
-    @snacks = TrackingPeriod.find_by(user_id: current_user.id, name: 'Snacks')
+    if current_user
+      @breakfast = TrackingPeriod.find_by(user_id: current_user.id, name: 'Breakfast')
+      @lunch = TrackingPeriod.find_by(user_id: current_user.id, name: 'Lunch')
+      @dinner = TrackingPeriod.find_by(user_id: current_user.id, name: 'Dinner')
+      @snacks = TrackingPeriod.find_by(user_id: current_user.id, name: 'Snacks')
+      @total_calories = total_calorie_count
+    end
   end
 
   def show
