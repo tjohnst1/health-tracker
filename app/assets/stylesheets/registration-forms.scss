@@ -1,0 +1,25 @@
+.registration-container{
+  text-align: center;
+  display: inline-block;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  .registration-header{
+    text-transform: uppercase;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+  }
+  form{
+    text-align: left;
+  }
+  label{
+    font-weight: 300;
+    color: #333;
+  }
+
+
+
+
+}
