@@ -1,26 +1,25 @@
 <% if current_user %>
-  <h1 id="tracking-period-calorie-total"><%= @tracking_period.calorie_total %></h1>
-
-  <div id="tracking-period-food">
-    <% if @tracking_period.foods %>
-      <% @tracking_period.foods.each do |food| %>
-        <div class="food-info">
-          <p><%= food.name %><p>
-          <p>Servings: <%= food.servings %></p>
-          <p>Calories per serving: <%= food.calories_per_serving %></p>
-          <p>Calories Total: <%= food.calorie_total %></p>
-          <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), class:'edit-food', remote: true %>
-          <%= link_to 'Delete', tracking_period_food_path(@tracking_period, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
-        </div>
+  <div class="col-sm-10 col-sm-offset-1 generic-container">
+    <h1 id="tracking-period-calorie-total">Total Calories Consumed:<%= @tracking_period.calorie_total %></h1>
+    <div id="tracking-period-food">
+      <% if @tracking_period.foods %>
+        <% @tracking_period.foods.each do |food| %>
+          <div class="food-info">
+            <p class="food-name"><%= food.name %><p>
+            <p>Servings: <%= food.servings %></p>
+            <p>Calories per serving: <%= food.calories_per_serving %></p>
+            <p>Calories Total: <%= food.calorie_total %></p>
+            <%= link_to 'Edit Info', edit_tracking_period_food_path(@tracking_period, food), class:'edit-food', remote: true %>
+            <%= link_to 'Delete', tracking_period_food_path(@tracking_period, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>There is nothing here! Please add data.</p>
       <% end %>
-    <% else %>
-      <p>Test Food</p>
-    <% end %>
+    </div>
+    <%= link_to 'Add Food', new_tracking_period_food_path(@tracking_period), remote: true, id: 'add-food' %>
   </div>
-
-  <%= link_to 'Add Food', new_tracking_period_food_path(@tracking_period), remote: true, id: 'add-food' %>
+  <%= render 'modal' %>
 <% else %>
-
-  <% render 'splash_page'%>
-
+  <%= render 'splash_page'%>
 <% end %>

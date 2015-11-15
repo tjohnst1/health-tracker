@@ -1,2 +1,5 @@
-$('#add-food').hide();
-$('#tracking-period-food').append('<%= j render "form" %>');
+$('.modal-body').empty();
+$('.modal-body').append('<%= j render "form" %>');
+$('.modal-title').html('Add a Food Item')
+$('#new_food').append('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
+$('#food-modal').modal('show');
