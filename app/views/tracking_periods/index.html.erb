@@ -1,13 +1,3 @@
-<div class="jumbotron">
-  <div class="jumbotron-text">
-    <h1 class="headline">Calorie Counter</h1>
-    <p class="byline">A simple calorie tracking app.</p>
-    <p>
-      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-default jumbotron-btn' %>
-    </p>
-  </div>
-</div>
-
 <% if current_user %>
   <h1 id="tracking-period-calorie-total"><%= @tracking_period.calorie_total %></h1>
 
@@ -29,4 +19,8 @@
   </div>
 
   <%= link_to 'Add Food', new_tracking_period_food_path(@tracking_period), remote: true, id: 'add-food' %>
+<% else %>
+
+  <% render 'splash_page'%>
+
 <% end %>
