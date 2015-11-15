@@ -10,6 +10,7 @@ class FoodsController < ApplicationController
 
   def create
     @tracking_period = TrackingPeriod.find(params[:tracking_period_id])
+    @tracking_period_name = @tracking_period.name
     @food = @tracking_period.foods.new(food_params)
     respond_to do |format|
       if @food.save

@@ -1,12 +1,7 @@
 <% if current_user %>
-  <% if @tracking_period %>
-    <div class="col-sm-10 col-sm-offset-1 generic-container">
-      <h1 id="tracking-period-calorie-total">Total Calories Consumed:<%= @tracking_period.calorie_total %></h1>
-    </div>
-  <% else %>
     <div class="col-sm-10 col-sm-offset-1 generic-container">
       <h5>Breakfast</h5>
-      <div class="tracking-period-container">
+      <div class="tracking-period-container" id="Breakfast-container">
         <% if @breakfast %>
           <% @breakfast.foods.each do |food| %>
             <div class="food-info">
@@ -19,15 +14,61 @@
               <%= link_to 'Delete', tracking_period_food_path(@breakfast, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
             </div>
           <% end %>
-        <% else %>
-          <p>There is nothing here! Please add data.</p>
         <% end %>
       </div>
+      <%= link_to 'Add Food', new_tracking_period_food_path(@breakfast), class:'new-food', remote: true %>
       <h5>Lunch</h5>
+      <div class="tracking-period-container" id="Lunch-container">
+        <% if @lunch %>
+          <% @lunch.foods.each do |food| %>
+            <div class="food-info">
+              <p class="food-name"><%= food.name %><p>
+              <p>Servings: <%= food.servings %></p>
+              <p>Calories per serving: <%= food.calories_per_serving %></p>
+              <p>Calories Total: <%= food.calorie_total %></p>
+              <p class="hidden"><%= food.id %></p>
+              <%= link_to 'Edit Info', edit_tracking_period_food_path(@lunch, food), class:'edit-food', remote: true %>
+              <%= link_to 'Delete', tracking_period_food_path(@lunch, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to 'Add Food', new_tracking_period_food_path(@lunch), class:'new-food', remote: true %>
       <h5>Dinner</h5>
+      <div class="tracking-period-container" id="Dinner-container">
+        <% if @dinner %>
+          <% @dinner.foods.each do |food| %>
+            <div class="food-info">
+              <p class="food-name"><%= food.name %><p>
+              <p>Servings: <%= food.servings %></p>
+              <p>Calories per serving: <%= food.calories_per_serving %></p>
+              <p>Calories Total: <%= food.calorie_total %></p>
+              <p class="hidden"><%= food.id %></p>
+              <%= link_to 'Edit Info', edit_tracking_period_food_path(@dinner, food), class:'edit-food', remote: true %>
+              <%= link_to 'Delete', tracking_period_food_path(@dinner, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to 'Add Food', new_tracking_period_food_path(@dinner), class:'new-food', remote: true %>
       <h5>Snacks</h5>
+      <div class="tracking-period-container" id="Snacks-container">
+        <% if @snacks %>
+          <% @snacks.foods.each do |food| %>
+            <div class="food-info">
+              <p class="food-name"><%= food.name %><p>
+              <p>Servings: <%= food.servings %></p>
+              <p>Calories per serving: <%= food.calories_per_serving %></p>
+              <p>Calories Total: <%= food.calorie_total %></p>
+              <p class="hidden"><%= food.id %></p>
+              <%= link_to 'Edit Info', edit_tracking_period_food_path(@snacks, food), class:'edit-food', remote: true %>
+              <%= link_to 'Delete', tracking_period_food_path(@snacks, food), remote: true, class:'delete-food', data: { confirm: 'Are you sure?', method: 'delete' } %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to 'Add Food', new_tracking_period_food_path(@snacks), class:'new-food', remote: true %>
     </div>
-  <% end %>
   <%= render 'modal' %>
 <% else %>
   <%= render 'splash_page'%>
