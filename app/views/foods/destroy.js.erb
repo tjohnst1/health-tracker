@@ -1,3 +1,3 @@
-$('.delete-food').on('ajax:complete',function(e) {
-  $(this).closest('.food-info').fadeOut(500);
+$(document).on('ajaxSuccess', function() {
+  $('.hidden:contains(<%= @food.id %>)').closest('.food-info').fadeOut(500);
 });
