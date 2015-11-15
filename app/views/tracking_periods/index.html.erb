@@ -7,7 +7,7 @@
     <div class="col-sm-10 col-sm-offset-1 generic-container">
       <h5>Breakfast</h5>
       <div class="tracking-period-container">
-        <% if @breakfast.foods %>
+        <% if @breakfast %>
           <% @breakfast.foods.each do |food| %>
             <div class="food-info">
               <p class="food-name"><%= food.name %><p>
@@ -22,7 +22,6 @@
         <% else %>
           <p>There is nothing here! Please add data.</p>
         <% end %>
-        <%= link_to 'Add Food', new_tracking_period_food_path(@breakfast), remote: true, id: 'add-food' %>
       </div>
       <h5>Lunch</h5>
       <h5>Dinner</h5>

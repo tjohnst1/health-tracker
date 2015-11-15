@@ -1,5 +1,4 @@
 class TrackingPeriod < ActiveRecord::Base
-  validates :calorie_count, presence: true
   has_many :foods
   has_many :exercises
   def calorie_total
