@@ -41,13 +41,18 @@ class FoodsController < ApplicationController
         format.js
       else
         format.html{ render :edit }
+<<<<<<< HEAD
         format.js{}
+=======
+        format.js
+>>>>>>> a7a1bb59ca53dbc3d6e10aa1b9b01247562cc102
       end
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
+    @foodid = @food.id
     @food.destroy
     respond_to do |format|
       format.js
