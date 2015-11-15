@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HealthTracker</title>
+  <title>Calorie Counter</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,800' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="salad-img">
 <%= render 'layouts/nav' %>
 <% if (flash.notice || flash.alert) %>
   <%= render 'layouts/flash' %>
