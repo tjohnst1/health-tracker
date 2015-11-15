@@ -3,7 +3,6 @@ class TrackingPeriodsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-<<<<<<< HEAD
     if current_user
       @breakfast = TrackingPeriod.find_by(user_id: current_user.id, name: 'Breakfast')
       @lunch = TrackingPeriod.find_by(user_id: current_user.id, name: 'Lunch')
@@ -11,11 +10,6 @@ class TrackingPeriodsController < ApplicationController
       @snacks = TrackingPeriod.find_by(user_id: current_user.id, name: 'Snacks')
       @total_calories = total_calorie_count
     end
-=======
-    @tracking_periods = TrackingPeriod.all
-    @tracking_period = TrackingPeriod.find_by(user_id: current_user)
-    @foods = @tracking_period.foods.sort{|x, y| y.calorie_total <=> x.calorie_total}
->>>>>>> a7a1bb59ca53dbc3d6e10aa1b9b01247562cc102
   end
 
   def show

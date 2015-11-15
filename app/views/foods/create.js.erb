@@ -1,11 +1,2 @@
-<<<<<<< HEAD
 $('#food-modal').modal('toggle');
 $('#<%= @tracking_period_name %>-container').append('<%= j render "new_food" %>');
-=======
-$('#add-food').show();
-$('#modal-form').modal('toggle')
-
-$('#tracking-period-food').append('<%= j render "new_food" %>');
-var newCalorieCount = Number($('#tracking-period-calorie-total').html()) + Number($('.food-calories-<%= @food.id %>').html())
-$('#tracking-period-calorie-total').html(newCalorieCount)
->>>>>>> a7a1bb59ca53dbc3d6e10aa1b9b01247562cc102

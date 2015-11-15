@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 $('#food-modal').modal('toggle');
 $(document).on('ajaxSuccess', function() {
   $('.hidden:contains(<%= @food.id %>)').closest('.food-info').html('<%= j render "new_food" %>')
 });
-=======
-$('#modal-form').modal('toggle')
-$('.food-info-<%= @food.id %>').html('<%= j render "new_food" %>')
->>>>>>> a7a1bb59ca53dbc3d6e10aa1b9b01247562cc102
