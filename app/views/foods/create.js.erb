@@ -1,2 +1,5 @@
 $('#food-modal').modal('toggle');
 $('#<%= @tracking_period_name %>-container').append('<%= j render "new_food" %>');
+$('.food-info-headline').on('click', function(){
+  $(this).next('.food-info-details').slideToggle('slow')
+});
