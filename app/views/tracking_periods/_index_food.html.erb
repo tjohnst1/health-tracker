@@ -17,4 +17,6 @@
     <% end %>
   <% end %>
 </div>
-<%= link_to 'Add Food', new_tracking_period_food_path(tracking_period), class:'new-food', remote: true %>
+<%= link_to new_tracking_period_food_path(tracking_period), class:'new-food', remote: true  do %>
+  <span class="glyphicon glyphicon-plus"></span> Add Food
+<% end %>

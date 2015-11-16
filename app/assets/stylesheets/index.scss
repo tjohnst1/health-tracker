@@ -46,25 +46,22 @@
         }
       }
     }
-    .food-info:last-child{
-      border-bottom: none;
-    }
+
   }
   .new-food{
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: .5px;
-    font-weight: 500;
-    font-size: 15px;
-    border-radius: 10px;
-    padding: 10px 20px;
-    border: none;
-    background-color: $red;
-    color: white;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    font-weight: 800;
+    font-size: 14px;
+    padding: 0;
+    color: #3591E0;
+    text-align: center;
+    margin-top: 10px;
   }
   .new-food:hover{
     text-decoration: none;
+    color: #2D81CA;
   }
 }
 

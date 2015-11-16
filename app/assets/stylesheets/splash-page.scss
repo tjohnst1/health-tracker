@@ -4,17 +4,19 @@
 }
 
 .index-container{
-  text-align: center;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   .index-text{
-    padding: 10px;
+    padding: 10% 5%;
     display: inline-block;
-    margin: 0 40px;
     .headline{
       font-weight: 800;
-      color:  $red;
+      color:  $dark-brown;
       margin: 0;
+      font-size: 58px;
+    }
+    .byline{
+      margin: 5px 0 15px 0;
+      color: #EAEAEA;
+      font-size: 26px;
     }
     .index-btn{
       display: inline-block;
