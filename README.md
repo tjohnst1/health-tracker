@@ -1,5 +1,5 @@
 #Calorie Counter
-*A Rails application for Calculating Calorie Intake*
+*A Rails Application for Calculating Calorie Intake*
 
 https://sheltered-anchorage-2234.herokuapp.com/
 
@@ -21,7 +21,7 @@ Alternatively, use the provided Heroku link noted above.
 ####Technologies Used
 Ruby, Rails, jQuery, JavaScript, Bootstrap, CSS, HTML, PostgreSQL
 
-###Legal
+####Legal
 *Copyright (c) 2015 Travis Johnston*
 
 This software is licensed under the MIT license.
