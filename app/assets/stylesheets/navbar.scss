@@ -20,3 +20,24 @@
 .navbar-default .navbar-nav > li > a:hover{
   color: black;
 }
+.navbar-default .navbar-toggle {
+  border-color: inherit;
+}
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: $dark-brown;
+}
+
+@media screen and (max-width: 768px){
+  .navbar-collapse{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: $dark-brown;
+  }
+}

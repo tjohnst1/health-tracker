@@ -1,6 +1,7 @@
 .generic-container{
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 5px 10px 10px;
   #tracking-period-calorie-total{
     color: $red;
     font-weight: 800;
@@ -67,4 +68,16 @@
 
 .btn{
   display: inline-block;
+}
+
+#calorie-count{
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #3591E0;
+}
+
+@media screen and (max-width: 768px){
+  .row{
+    text-align: center;
+  }
 }

@@ -1,5 +1,6 @@
 $('#food-modal').modal('toggle');
 $('#<%= @tracking_period_name %>-container').append('<%= j render "new_food" %>');
+$('#calorie-count').html('<%= total_calorie_count %>');
 $('.hidden:contains(<%= @food.id %>)').closest('.food-info-details').prev('.food-info-headline').on('click', function(){
   $(this).next('.food-info-details').slideToggle('slow')
 });

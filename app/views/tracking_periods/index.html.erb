@@ -1,5 +1,5 @@
 <% if current_user %>
-    <div class="col-sm-10 col-sm-offset-1 generic-container text-center">
+    <div class="col-xs-10 col-xs-offset-1 generic-container text-center">
       <h5 class="subheading">Breakfast</h5>
       <%= render partial: "index_food", locals: { tracking_period: @breakfast, tracking_container: "Breakfast-container" } %>
       <h5 class="subheading">Lunch</h5>
@@ -8,6 +8,8 @@
       <%= render partial: "index_food", locals: { tracking_period: @dinner, tracking_container: "Dinner-container" } %>
       <h5 class="subheading">Snacks</h5>
       <%= render partial: "index_food", locals: { tracking_period: @snacks, tracking_container: "Snacks-container" } %>
+      <h5 class="subheading">Total Calories</h5>
+      <p id="calorie-count"><%= @total_calories %></p>
     </div>
   <%= render 'modal' %>
 <% else %>

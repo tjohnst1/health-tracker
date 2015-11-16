@@ -1,3 +1,4 @@
 $(document).on('ajaxSuccess', function() {
   $('.hidden:contains(<%= @food.id %>)').closest('.food-info').fadeOut(500);
+  $('#calorie-count').html('<%= total_calorie_count %>');
 });

@@ -1,4 +1,6 @@
 $('#food-modal').modal('toggle');
-$(document).on('ajaxSuccess', function() {
-  $('.hidden:contains(<%= @food.id %>)').closest('.food-info').html('<%= j render "new_food" %>')
+$('.hidden:contains(<%= @food.id %>)').closest('.tracking-period-container').html('<%= j render "new_food" %>')
+$('.hidden:contains(<%= @food.id %>)').closest('.food-info-details').prev('.food-info-headline').on('click', function(){
+  $(this).next('.food-info-details').slideToggle('slow')
 });
+$('#calorie-count').html('<%= total_calorie_count %>')
